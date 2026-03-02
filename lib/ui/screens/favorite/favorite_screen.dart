@@ -15,7 +15,7 @@ class FavoriteScreen extends StatelessWidget {
     // 1- Read the global song repository
     SongRepository songRepository = context.read<SongRepository>();
     List<Song> songs = songRepository.fetchSongs();
- 
+
     // 2 - Watch the global player state
     PlayerState playerState = context.read<PlayerState>();
 
@@ -28,10 +28,7 @@ class FavoriteScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(height: 16),
-          Text(
-            "Favorite",
-            style: AppTextStyles.heading,
-          ),
+          Text("Favorite", style: AppTextStyles.heading),
 
           SizedBox(height: 50),
 
@@ -51,15 +48,10 @@ class FavoriteScreen extends StatelessWidget {
 }
 
 class SongTile extends StatelessWidget {
-  const SongTile({
-    super.key,
-    required this.song,
-    required this.isPlaying,
-  });
+  const SongTile({super.key, required this.song, required this.isPlaying});
 
   final Song song;
   final bool isPlaying;
-
 
   @override
   Widget build(BuildContext context) {
